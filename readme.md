@@ -1,13 +1,18 @@
-JSVariableWatch
+# JSVariableWatcher
 
 A loopy variable watcher.
 
-Every X ms it will check for modifications to a variable.
+Every X (250 by default) ms it will check for modifications to a variable and
+run the associated function.
 
-Usage:
+I haven't done much testing of it. Your milage may vary.
+
+## Usage
 
     var j = new JVW();
     j.add('nameOfVariable', function (varName, oldValue, newValue) {
-    	// do stuff when a variable changes.
+    	// do stuff when variable changes.
     });
+
+    j.remove('nameOfvariable');
 
