@@ -36,7 +36,7 @@ var JVW = function (customTimeout) {
 	};
 
 	this.remove = function (varName) {
-		if (vars[varName] != null) {
+		if (typeof(vars[varName]) == "undefined") {
 			return true; // item didn't exist, safe to tell user it doen't exist
 		} else {
 			var index = -1;
