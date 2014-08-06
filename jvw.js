@@ -9,7 +9,7 @@
 			Might try something like different timeout for different queues of variables.
  */
 
-var JVW = function (customTimeout) {
+var JVW = function (customTimeout, w) {
 	// vars to check on each run
 	var vars = [];
 
@@ -17,6 +17,7 @@ var JVW = function (customTimeout) {
 
 	// lower to make more 'responsive'
 	this.timeout = customTimeout || 250;
+	this.win = w || window;
 
 	this.add = function (varName, func) {
 		if (vars[varName] != null) {
@@ -77,7 +78,7 @@ var JVW = function (customTimeout) {
 	// takes a variable name and returns it's value.
 	// based on invokeCommandString from Chromium
 	var objFromName = function (str) {
-		var obj = window;
+		var obj = self.win;
 		var components = str.split('.');
 		for (var i = 0; i < components.length; i++) {
 			obj = obj[components[i]];
@@ -94,3 +95,5 @@ var JVW = function (customTimeout) {
 
 	setTimeout(checkVars, self.timeout); // start it
 };
+
+if (typeof module != "undefined" && module !== null) module.exports = JVW;
