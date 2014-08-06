@@ -1,0 +1,23 @@
+{
+  "name": "jvw",
+  "version": "1.0.0",
+  "description": "A loopy variable watcher",
+  "main": "jvw.js",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/egilkh/jvw"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/egilkh/jvw/issues"
+  },
+  "homepage": "https://github.com/egilkh/jvw",
+  "devDependencies": {
+    "mocha": "^1.21.3",
+    "should": "^4.0.4"
+  }
+}
